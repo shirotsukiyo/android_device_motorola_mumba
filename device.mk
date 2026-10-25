@@ -63,10 +63,9 @@ PRODUCT_PACKAGES += \
 
 # Properties
 PRODUCT_PACKAGES += \
-    hardware.sku.XT2517-1.prop \
-    hardware.sku.XT2517-2.prop \
-    hardware.sku.XT2517-3.prop \
-    hardware.sku.XT2517V.prop
+    hardware.sku.XT2537-3.prop \
+    hardware.sku.XT2537-4.prop \
+    hardware.sku.XT2537-5.prop
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
