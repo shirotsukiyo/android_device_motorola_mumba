@@ -20,13 +20,14 @@ vendor.display.svi.config=1
 vendor.display.svi.config_path=/vendor/etc/display/SVIConfig.xml
 
 # Fingerprint
-ro.hardware.fingerprint=goodix
+persist.vendor.qfp=true
 
 # NFC
+persist.vendor.nfc.stchipinfo=st54l
 persist.vendor.nfc.st.multisim_fw_config=true
 
 # Sensors
 persist.vendor.sensors.mot_tap=true
 ro.vendor.sensors.glance_approach=false
 ro.vendor.sensors.mot_ltv=true
-ro.vendor.sensors.prox_for_call=fasle
+ro.vendor.sensors.prox_for_call=false
