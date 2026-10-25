@@ -74,10 +74,14 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 $(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.moto_sm6435-richtap)
 $(call soong_config_set_bool,qti_vibrator,use_effect_stream,true)
 
-# VINTF
-ODM_MANIFEST_SKUS += dn n
-ODM_MANIFEST_DN_FILES := $(LOCAL_PATH)/vintf/manifest_dn.xml
-ODM_MANIFEST_N_FILES := $(LOCAL_PATH)/vintf/manifest_n.xml
+# Manifest
+ODM_MANIFEST_SKUS += b d dn dne n ne
+ODM_MANIFEST_B_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_b.xml $(DEVICE_PATH)/configs/vintf/manifest_parrot_ss.xml
+ODM_MANIFEST_D_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_d.xml
+ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_dn.xml
+ODM_MANIFEST_DNE_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_dne.xml
+ODM_MANIFEST_N_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_n.xml
+ODM_MANIFEST_NE_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_ne.xml
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/motorola/mumba/mumba-vendor.mk)
