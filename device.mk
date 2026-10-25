@@ -15,22 +15,22 @@
 #
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2712
-TARGET_SCREEN_WIDTH := 1220
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
 
 # Screen
-TARGET_SCREEN_DENSITY := 450
+TARGET_SCREEN_DENSITY := 390
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := 450dpi
+PRODUCT_AAPT_PREF_CONFIG := 390dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 BOARD_SHIPPING_API_LEVEL := 202404
-PRODUCT_SHIPPING_API_LEVEL := 35
+PRODUCT_SHIPPING_API_LEVEL := 36
 
-# Inherit from motorola sm6475-common
-$(call inherit-product, device/motorola/sm6475-common/common.mk)
+# Inherit from motorola sm6435-common
+$(call inherit-product, device/motorola/sm6435-common/common.mk)
 
 # Overlay
 PRODUCT_PACKAGES += \
@@ -48,10 +48,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
     $(LOCAL_PATH)/configs/audio/usecaseKvManager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usecaseKvManager.xml
 
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.moto_sm6475_fod
-
 # Init
 PRODUCT_PACKAGES += \
     init.mmi.overlay.rc \
@@ -65,12 +61,6 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     Tag
 
-# PowerShare
-PRODUCT_PACKAGES += \
-    vendor.lineage.powershare-service.default
-
-$(call soong_config_set,lineage_powershare,powershare_path,/sys/class/power_supply/wireless/device/tx_mode)
-
 # Properties
 PRODUCT_PACKAGES += \
     hardware.sku.XT2517-1.prop \
@@ -81,12 +71,8 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
-# StylusKeyHandler
-PRODUCT_PACKAGES += \
-    StylusKeyHandler
-
 # Vibrator
-$(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.moto_sm6475-richtap)
+$(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.moto_sm6435-richtap)
 $(call soong_config_set_bool,qti_vibrator,use_effect_stream,true)
 
 # VINTF
@@ -95,4 +81,4 @@ ODM_MANIFEST_DN_FILES := $(LOCAL_PATH)/vintf/manifest_dn.xml
 ODM_MANIFEST_N_FILES := $(LOCAL_PATH)/vintf/manifest_n.xml
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/motorola/mona/mona-vendor.mk)
+$(call inherit-product, vendor/motorola/mumba/mumba-vendor.mk)

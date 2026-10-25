@@ -19,21 +19,24 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 TARGET_SUPPORTS_OMX_SERVICE := false
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from mona device
-$(call inherit-product, device/motorola/mona/device.mk)
+# Inherit from target device
+$(call inherit-product, device/motorola/mumba/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_mona
-PRODUCT_DEVICE := mona
+PRODUCT_NAME := lineage_mumba
+PRODUCT_DEVICE := mumba
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
-PRODUCT_MODEL := moto g stylus - 2025
+PRODUCT_MODEL := moto g57 power
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DeviceProduct="mona_g" \
-    BuildDesc="mona_g-user 16 W1VAS36.62-22-16-1-18 285398a-18976c release-keys MW-292" \
-    BuildFingerprint="motorola/mona_g/mona:16/W1VAS36.62-22-16-1-18/285398a-18976c:user/release-keys"
+    BuildDesc="mumba_g-user 16 W1WAAS36M.48-12-ST12.1 c557f6 release-keys" \
+    BuildFingerprint=motorola/mumba_g/mumba:16/W1WAAS36M.48-12-ST12.1/c557f6:user/release-keys \
+    DeviceName=mumba \
+    DeviceProduct=mumba \
+    SystemDevice=mumba \
+    SystemName=mumba
