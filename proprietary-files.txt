@@ -28,6 +28,13 @@ vendor/etc/vintf/manifest/vendor.motorola.hardware.sxf.service.xml
 vendor/lib64/libverdict.so
 vendor/lib64/motorola.hardware.sxf-V2-ndk.so
 
+# Latency
+vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
+vendor/lib64/vendor.qti.latency@2.0.so
+vendor/lib64/vendor.qti.latency@2.1.so
+vendor/lib64/vendor.qti.latency@2.2.so
+vendor/lib64/vendor.qti.latencyaidlservice-V1-ndk.so
+
 # Fdr
 vendor/bin/hw/motorola.hardware.fdr-service
 vendor/etc/init/motorola.hardware.fdr.service.rc
